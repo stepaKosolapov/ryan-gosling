@@ -21,7 +21,7 @@ const getChance = (percent) => {
 };
 
 bot.on('message', (msg) => {
-    if(msg.text?.startsWith('/') || msg.text?.startsWith('От ') ||  msg.text?.startsWith('Oт ')) {
+    if(msg.text?.startsWith('/')) {
         return;
     }
 
@@ -40,7 +40,7 @@ bot.on('message', (msg) => {
         }
 
         if (!isAnonim) {
-            bot.sendMessage(config.CHAT_ID, `От ${msg.from.username}:`);
+            bot.sendMessage(config.CHAT_ID, `-> ${msg.from.username}:`);
         }
 
         if (msg.sticker) {
