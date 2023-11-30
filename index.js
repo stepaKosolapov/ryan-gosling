@@ -21,7 +21,7 @@ const getChance = (percent) => {
 };
 
 bot.on('message', (msg) => {
-    if(msg.text?.startsWith('/') || msg.text?.startsWith('От ')) {
+    if(msg.text?.startsWith('/') || msg.text?.startsWith('От ') ||  msg.text?.startsWith('Oт ')) {
         return;
     }
 
