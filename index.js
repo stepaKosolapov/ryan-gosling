@@ -21,7 +21,7 @@ const getChance = (percent) => {
 };
 
 bot.on('message', (msg) => {
-    if(msg.text?.startsWith('/')) {
+    if(msg.text?.startsWith('/') || msg.text?.startsWith('->')) {
         return;
     }
 
@@ -32,7 +32,7 @@ bot.on('message', (msg) => {
         if (msg.text) {
             let preparedMessage = msg.text;
             if (!isAnonim) {
-                preparedMessage = `От ${msg.from.username}: ${preparedMessage}`;
+                preparedMessage = `-> ${msg.from.username}: ${preparedMessage}`;
             }
 
             bot.sendMessage(config.CHAT_ID, preparedMessage);
